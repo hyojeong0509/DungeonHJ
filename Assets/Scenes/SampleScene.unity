@@ -11311,7 +11311,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 342919a914b8954429e67ea1aeb8c77d, type: 3}
   m_Name: 
@@ -24355,7 +24355,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9171952328373019990, guid: 01a658a84800bf844884a000d3ae9f30, type: 3}
+  - {fileID: 2100000, guid: 02d1e5c8d27b6ae42ad4194a87e3f7b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25762,6 +25762,7 @@ GameObject:
   - component: {fileID: 8899098679248320087}
   - component: {fileID: 8899098679248320088}
   - component: {fileID: 8899098679248320089}
+  - component: {fileID: 8899098679248320090}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -26146,6 +26147,27 @@ MonoBehaviour:
     m_Bits: 128
   curInteractGameObject: {fileID: 0}
   promptText: {fileID: 160893414}
+--- !u!95 &8899098679248320090
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085126495477837032}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 01a658a84800bf844884a000d3ae9f30, type: 3}
+  m_Controller: {fileID: 9100000, guid: e1dca5eb13792204585246a0f23463ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9021073564343741963
 GameObject:
   m_ObjectHideFlags: 0
@@ -26216,8 +26238,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 880752817}
-  - {fileID: 8899098679248320082}
-  - {fileID: 1038225423}
+  - {fileID: 536428258}
   - {fileID: 979495929257035057}
   - {fileID: 1667303227}
-  - {fileID: 536428258}
+  - {fileID: 1038225423}
+  - {fileID: 8899098679248320082}
