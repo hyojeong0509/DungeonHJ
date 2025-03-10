@@ -23932,7 +23932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 947105968684421772, guid: 27323a96755742c4982b44ee80f193a5, type: 3}
       propertyPath: m_Name
-      value: Item_Rock
+      value: Item_Rock(Test)
       objectReference: {fileID: 0}
     - target: {fileID: 9205419568040332695, guid: 27323a96755742c4982b44ee80f193a5, type: 3}
       propertyPath: m_LocalPosition.x
