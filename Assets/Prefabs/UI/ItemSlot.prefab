@@ -153,9 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   inventory: {fileID: 0}
-  button: {fileID: 0}
-  icon: {fileID: 0}
-  quatityText: {fileID: 0}
+  button: {fileID: 1859162358015281096}
+  icon: {fileID: 9102931090245122498}
+  quatityText: {fileID: 3010458214357803266}
   index: 0
   equipped: 0
   quantity: 0

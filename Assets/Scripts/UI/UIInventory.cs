@@ -39,6 +39,7 @@ public class UIInventory : MonoBehaviour
 
         inventoryWindow.SetActive(false);
         slots = new ItemSlot[slotPanel.childCount];
+        //slots = GetComponentsInChildren<ItemSlot>();
 
         for (int i = 0; i < slots.Length; i++)
         {
@@ -83,12 +84,10 @@ public class UIInventory : MonoBehaviour
         return inventoryWindow.activeInHierarchy;
     }
 
-    // PlayerController 먼저 수정
-
     public void AddItem()
     {
         ItemData data = CharacterManager.Instance.Player.itemData;
-
+        
         if (data.canStack)
         {
             ItemSlot slot = GetItemStack(data);
@@ -100,9 +99,9 @@ public class UIInventory : MonoBehaviour
                 return;
             }
         }
-
+        
         ItemSlot emptySlot = GetEmptySlot();
-
+        
         if (emptySlot != null)
         {
             emptySlot.item = data;
@@ -111,7 +110,7 @@ public class UIInventory : MonoBehaviour
             CharacterManager.Instance.Player.itemData = null;
             return;
         }
-
+        
         ThrowItem(data);
         CharacterManager.Instance.Player.itemData = null;
     }
@@ -132,7 +131,7 @@ public class UIInventory : MonoBehaviour
     }
 
     ItemSlot GetItemStack(ItemData data)
-    {
+    { 
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == data && slots[i].quantity < data.maxStackAmount)
@@ -155,14 +154,10 @@ public class UIInventory : MonoBehaviour
         return null;
     }
 
-    // Player 스크립트 먼저 수정
     public void ThrowItem(ItemData data)
     {
         Instantiate(data.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
     }
-
-
-    // ItemSlot 스크립트 먼저 수정
     public void SelectItem(int index)
     {
         if (slots[index].item == null) return;
@@ -220,7 +215,7 @@ public class UIInventory : MonoBehaviour
         {
             if (slots[selectedItemIndex].equipped)
             {
-                //UnEquip(selectedItemIndex);
+                UnEquip(selectedItemIndex);
             }
 
             selectedItem.item = null;
@@ -233,5 +228,14 @@ public class UIInventory : MonoBehaviour
     public bool HasItem(ItemData item, int quantity)
     {
         return false;
+    }
+
+    void UnEquip(int index)
+    {
+        if (slots[index].item != null && slots[index].equipped)
+        {
+            slots[index].equipped = false;
+            UpdateUI();
+        }
     }
 }
