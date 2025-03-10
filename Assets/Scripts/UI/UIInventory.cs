@@ -39,7 +39,6 @@ public class UIInventory : MonoBehaviour
 
         inventoryWindow.SetActive(false);
         slots = new ItemSlot[slotPanel.childCount];
-        //slots = GetComponentsInChildren<ItemSlot>();
 
         for (int i = 0; i < slots.Length; i++)
         {
@@ -213,12 +212,9 @@ public class UIInventory : MonoBehaviour
 
         if (selectedItem.quantity <= 0)
         {
-            if (slots[selectedItemIndex].equipped)
-            {
-                UnEquip(selectedItemIndex);
-            }
-
             selectedItem.item = null;
+            slots[selectedItem.index].item = null;
+            selectedItemIndex = -1;
             ClearSelectedItemWindow();
         }
 
@@ -230,12 +226,4 @@ public class UIInventory : MonoBehaviour
         return false;
     }
 
-    void UnEquip(int index)
-    {
-        if (slots[index].item != null && slots[index].equipped)
-        {
-            slots[index].equipped = false;
-            UpdateUI();
-        }
-    }
 }

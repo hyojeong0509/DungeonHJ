@@ -25960,7 +25960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   condition: {fileID: 0}
-  itemData: {fileID: 11400000, guid: 9e7fa402508d1074ea8775438aceb4e8, type: 2}
+  itemData: {fileID: 0}
   dropPosition: {fileID: 680256367}
 --- !u!114 &8899098679248320087
 MonoBehaviour:
