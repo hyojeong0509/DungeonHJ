@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,7 +21,9 @@ public class PlayerController : MonoBehaviour
     public float lookSensitivity;
     private Vector2 mouseDelta;
     public bool canLook = true;
-    
+
+    [Header("UI")]
+    public TextMeshProUGUI speedText;
 
     [HideInInspector]
     public Action inventory;
@@ -44,6 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsJump", false);
         }
+        speedText.text = moveSpeed.ToString("F1");
     }
 
     private void FixedUpdate()
@@ -147,5 +152,21 @@ public class PlayerController : MonoBehaviour
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
+    }
+
+    public void SpeedUpForItem(float amount, float duration)
+    {
+        StartCoroutine(SpeedUpCoroutine(amount, duration));
+    }
+
+    private IEnumerator SpeedUpCoroutine(float amount, float duration)
+    { 
+        float originalMoveSpeed = moveSpeed;
+
+        moveSpeed += amount;
+
+        yield return new WaitForSeconds(duration);
+
+        moveSpeed = originalMoveSpeed;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item_Apple
   m_EditorClassIdentifier: 
   displayName: "\uC0AC\uACFC"
-  description: "\uB9DB\uC788\uAC8C \uC775\uC740 \uC0AC\uACFC\uB2E4. \uCCB4\uB825\uC744
+  description: "\uB9DB\uC788\uAC8C \uC775\uC740 \uC0AC\uACFC\uC785\uB2C8\uB2E4. \uCCB4\uB825\uC744
     10 \uD68C\uBCF5\uD569\uB2C8\uB2E4."
   type: 2
   icon: {fileID: 21300000, guid: 1d369887fca25d643b325009a91c2ddc, type: 2}

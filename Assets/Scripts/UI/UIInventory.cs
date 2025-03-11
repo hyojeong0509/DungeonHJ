@@ -194,6 +194,8 @@ public class UIInventory : MonoBehaviour
                         condition.Heal(selectedItem.item.consumables[i].value); break;
                     case ConsumableType.Stemina:
                         condition.UseStamina(selectedItem.item.consumables[i].value); break;
+                    case ConsumableType.Speed:
+                        condition.SpeedUp(selectedItem.item.consumables[i].value); break;
                 }
             }
             RemoveSelctedItem();
