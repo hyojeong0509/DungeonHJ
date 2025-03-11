@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53825e4abd3c38e4bb2e8ea1430e9608, type: 3}
+  m_Name: Item_Cherry
+  m_EditorClassIdentifier: 
+  displayName: "\uCCB4\uB9AC"
+  description: "\uC0C8\uCF64\uB2EC\uCF64\uD55C \uCCB4\uB9AC. \uCCB4\uB825\uC744 5
+    \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  type: 2
+  icon: {fileID: 21300000, guid: b99aa719440d0b64f84b3133e59d27a6, type: 2}
+  dropPrefab: {fileID: 3052878855699672617, guid: e5d3b1078d0bf8742a6d98863f1af96b, type: 3}
+  canStack: 1
+  maxStackAmount: 24
+  consumables:
+  - type: 1
+    value: 5
