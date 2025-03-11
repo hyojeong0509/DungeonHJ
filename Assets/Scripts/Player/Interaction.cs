@@ -14,6 +14,7 @@ public class Interaction : MonoBehaviour
 
     public TextMeshProUGUI promptText;
     private Camera camera;
+    public Transform cameraContainer;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Interaction : MonoBehaviour
             lastCheckTime = Time.time;
 
             Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+            //Ray ray = new Ray(cameraContainer.position, cameraContainer.forward);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
