@@ -25,16 +25,25 @@ public class PlayerController : MonoBehaviour
     public Action inventory;
 
     private Rigidbody _rigidbody;
+    private Animator animator;
 
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    private void Update()
+    {
+        if (IsGrounded())
+        {
+            animator.SetBool("IsJump", false);
+        }
     }
 
     private void FixedUpdate()
@@ -72,6 +81,7 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            animator.SetBool("IsJump", true);
         }
     }
     public void OnCollisionEnter(Collision collision)
@@ -97,6 +107,9 @@ public class PlayerController : MonoBehaviour
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
+
+        bool isMoving = curMovementInput.magnitude > 0;
+        animator.SetBool("IsMove", isMoving);
     }
 
     void CameraLook()
