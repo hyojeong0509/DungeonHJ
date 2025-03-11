@@ -192,8 +192,8 @@ public class UIInventory : MonoBehaviour
                 {
                     case ConsumableType.Health:
                         condition.Heal(selectedItem.item.consumables[i].value); break;
-                    //case ConsumableType.Hunger:
-                        //condition.Eat(selectedItem.item.consumables[i].value); break;
+                    case ConsumableType.Stemina:
+                        condition.UseStamina(selectedItem.item.consumables[i].value); break;
                 }
             }
             RemoveSelctedItem();

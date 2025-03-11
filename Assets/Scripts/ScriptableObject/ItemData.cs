@@ -9,7 +9,7 @@ public enum ItemType
 
 public enum ConsumableType
 {
-    Hunger,
+    Stemina,
     Health
 }
 
